@@ -1,0 +1,44 @@
+import 'package:flutter/cupertino.dart';
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: CupertinoTestRoute(),
+    );
+  }
+}
+
+
+class CupertinoTestRoute extends StatelessWidget  {
+  @override
+  Widget build(BuildContext context) {
+    return CupertinoPageScaffold(
+      navigationBar: CupertinoNavigationBar(
+        middle: Text(
+            "    This is Cupertino Demo",
+          style: TextStyle(
+            fontSize: 40,
+            color: Colors.black,
+            backgroundColor: Colors.white24,
+          ),
+        ),
+      ),
+      child: Center(
+        child: CupertinoButton(
+            color: CupertinoColors.activeBlue,
+            child: Text("Press"),
+            onPressed: () {}
+        ),
+      ),
+    );
+  }
+}
